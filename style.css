@@ -11,6 +11,9 @@ body
     font-family: Arial, Helvetica, sans-serif;
     background-color:black;
     color: white;
+    scroll-behavior: smooth;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 .Brand-name
@@ -65,5 +68,161 @@ li
     color: #4c78c8;
     cursor: pointer;
 
+}
+
+.Section-1 img
+{
+    display: flex;
+    height: 300px;
+    margin: 0;
+    padding: 10px 20px;
+    
+}
+
+.welcome-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #000;
+    color: white;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+.featured-section {
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #4c78c8;
+    margin-bottom: 20px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product-box {
+    background-color: #000;
+    color: white;
+    border: 2px solid #4c78c8;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-name {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    background: linear-gradient(90deg, #4c78c8, #c8b8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: #4c78c8;
+}
+
+
+.reviews-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to bottom, #000, #c8b8ff);
+}
+
+.reviews-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4c78c8;
+}
+
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+.review {
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid #4c78c8;
+}
+
+.review p {
+    font-style: italic;
+    color:red;
+    margin-bottom: 10px;
+}
+
+.review h4 {
+    margin: 0;
+    font-weight: bold;
+    color: #4c78c8;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
