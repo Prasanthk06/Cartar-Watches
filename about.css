@@ -1,0 +1,239 @@
+
+
+.Brand-name a
+{
+    text-decoration: none;
+}
+
+
+body,ul
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:white;
+    color: white;
+}
+
+.Brand-name
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+    background-color: #000;
+    border-bottom: 2px solid #4c78c8;
+
+}
+
+.Brand-name h2
+{
+    margin: 0;
+    top: 10px;
+    background: linear-gradient(90deg, #4c78c8, #c8b8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Website-list ul
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+li
+{
+    list-style: none;
+}
+
+.Website-list a
+{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    gap: 20px;
+}
+
+.Website-list a:hover
+{
+    color: #4c78c8;
+    cursor: pointer;
+
+}
+
+.Hero-slider
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide
+{
+    display: none;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: fade 0.3 ease-in-out;
+}
+
+.slide.active
+{
+    display: block;
+}
+
+.Content
+{
+    color:white;
+    position: absolute;
+    top: 20%;
+    bottom: 10%;
+    text-shadow: rgba(0, 0, 0, 0.8);
+}
+
+.Content h1
+{
+    font-size: 3rem;
+    margin: 0;
+}
+.Content p
+{
+    font-size: 1.5 rem;
+    margin: 10px 0 0 ;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000; 
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.about-us {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about-us h1,
+.about-us h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #e5b8ff; 
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+
+.team {
+    margin-top: 50px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.member {
+    background: #222; 
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 300px;
+    max-width: 300px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: calc(var(--animation-order) * 0.5s);
+}
+
+.member:hover {
+    transform: translateY(-10px);
+    background: #333; 
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #4c78c8;
+}
+
+.member p {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards ease-in-out;
+}
+
+.roll-in {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: rollIn 1.5s forwards ease-in-out;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rollIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply order to animations */
+.member:nth-child(1) {
+    --animation-order: 1;
+}
+
+.member:nth-child(2) {
+    --animation-order: 2;
+}
+
+.member:nth-child(3) {
+    --animation-order: 3;
+}

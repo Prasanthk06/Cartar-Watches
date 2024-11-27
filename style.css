@@ -1,0 +1,69 @@
+body,ul
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:black;
+    color: white;
+}
+
+.Brand-name
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px 20px;
+    background-color: #000;
+    border-bottom: 2px solid #4c78c8;
+
+}
+
+.Brand-name h2
+{
+    text-decoration: none;
+    margin: 0;
+    top: 10px;
+    background: linear-gradient(90deg, #4c78c8, #c8b8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Brand-name a
+{
+    text-decoration: none;
+}
+
+.Website-list ul
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+li
+{
+    list-style: none;
+}
+
+.Website-list a
+{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    gap: 20px;
+}
+
+.Website-list a:hover
+{
+    color: #4c78c8;
+    cursor: pointer;
+
+}
+
