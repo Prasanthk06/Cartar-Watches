@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap');
+
 
 .Brand-name a
 {
@@ -236,4 +238,21 @@ body, html {
 
 .member:nth-child(3) {
     --animation-order: 3;
+}
+
+.Locations h3
+{
+    font-family:'Grenze Gotisch';
+    font-size: 3rem;
+    background: linear-gradient(90deg, #4c78c8, #c8b8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+}
+
+.Locations iframe
+{
+    height: 400px;
+    width: 600px;
 }

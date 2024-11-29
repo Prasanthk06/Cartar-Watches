@@ -226,3 +226,29 @@ footer {
     }
 }
 
+.canvas-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('Watch1.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: red;
+    text-align: center;
+    padding: 20px;
+}
+
