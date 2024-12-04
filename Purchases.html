@@ -123,6 +123,18 @@
             font-size: 1.2rem;
             color: #4c78c8;
         }
+
+        #drawingCanvas {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        display: block;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 600px;
+            }
+
+    
+        
     </style>
 </head>
 <body>
@@ -170,5 +182,49 @@
             <button type="submit">Buy</button>
         </div>
     </section>
+    <div class="canvas-section">
+        <h3 style="color: #4c78c8; display: flex; align-items: center; justify-content: center;">Design Your Own Watch</h3>
+        <canvas id="drawingCanvas" width="600" height="400"></canvas>
+        <div style="text-align: center; margin-top: 10px;">
+            <button id="clearCanvas" style="padding: 10px 20px; background-color: #4c78c8; color: white; border: none; border-radius: 5px; cursor: pointer; width: 300px;">Clear Canvas</button>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("drawingCanvas");
+        const ctx = canvas.getContext("2d");
+        const clearButton = document.getElementById("clearCanvas");
+    
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+    
+        canvas.addEventListener("mousedown", (e) => {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+    
+        canvas.addEventListener("mouseup", () => (isDrawing = false));
+        canvas.addEventListener("mouseout", () => (isDrawing = false));
+    
+        canvas.addEventListener("mousemove", (e) => {
+            if (!isDrawing) return;
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 2;
+            ctx.lineJoin = "round";
+            ctx.lineCap = "round";
+    
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        });
+    
+        clearButton.addEventListener("click", () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+    </script>
+    
 </body>
 </html>

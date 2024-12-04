@@ -1,5 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap');
 
 
 .Brand-name a
@@ -53,6 +52,12 @@ body
 li
 {
     list-style: none;
+}
+
+hr
+{
+    color: #000;
+    background-color: #000;
 }
 
 .Website-list a
@@ -242,7 +247,6 @@ body, html {
 
 .Locations h3
 {
-    font-family:'Grenze Gotisch';
     font-size: 3rem;
     background: linear-gradient(90deg, #4c78c8, #c8b8ff);
     -webkit-background-clip: text;
