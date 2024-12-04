@@ -10,6 +10,7 @@
     
 <div class="Brand-name">
     <a href="index.html"><h2>Cartar Watches</h2></a>
+    <button class="menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
     <nav class="Website-list">
        <ul>
             <li><a href="LoginPage.html">Login/Signup</a></li>
@@ -67,6 +68,14 @@
       </div>
     </div>
 </section>
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const websiteList = document.querySelector('.Website-list');
+
+        menuToggle.addEventListener('click', () => {
+            websiteList.classList.toggle('active');
+        });
+</script>
 <footer>
     &copy; 2024 Cartar Watches. All rights reserved.
 </footer>

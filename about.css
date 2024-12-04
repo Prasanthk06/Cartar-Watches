@@ -260,3 +260,56 @@ body, html {
     height: 400px;
     width: 600px;
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .Website-list {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #4c78c8;
+        padding: 10px;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        right: 10px;
+        border-radius: 5px;
+    }
+
+    .Website-list ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .Website-list ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .Website-list.active {
+        display: flex;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    iframe {
+        height: 250px;
+    }
+
+    audio {
+        width: 100%;
+    }
+}

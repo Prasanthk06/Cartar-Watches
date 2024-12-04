@@ -252,3 +252,14 @@ canvas {
     padding: 20px;
 }
 
+@media(max-width=768px)
+{
+    body
+    {
+        max-width: 100%;
+    }
+
+  
+
+}
+
