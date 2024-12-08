@@ -313,3 +313,13 @@ body, html {
         width: 100%;
     }
 }
+
+.aud
+{
+    color: #4c78c8;
+}
+
+audio
+{
+    background-color: #333;
+}
