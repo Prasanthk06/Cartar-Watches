@@ -10,7 +10,7 @@ body
 {
     font-family: Arial, Helvetica, sans-serif;
     background-color:black;
-    color: white;
+     color: white;
     scroll-behavior: smooth;
     transform: translateY(50px);
     animation: fadeInUp 1s ease-out forwards;
@@ -95,10 +95,25 @@ li
     font-size: 1.2rem;
     line-height: 1.6;
 }
+  .carousel-inner img {
+      height: 500px;
+      object-fit: cover;
+      width: 100px;
+      margin: 0;
+      display: block;
+  }
+
+  #carouselExample
+  {
+    max-width: 100%;
+    margin: 0%;
+  }
+
 
 
 .featured-section {
     padding: 40px 20px;
+    background-color: #000;
 }
 
 .section-title {
@@ -144,10 +159,6 @@ li
     -webkit-text-fill-color: transparent;
 }
 
-.product-price {
-    font-size: 1.2rem;
-    color: #4c78c8;
-}
 
 
 .reviews-section {
@@ -226,24 +237,6 @@ footer {
     }
 }
 
-.canvas-background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url('Watch1.jpg');
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .content {
     position: relative;
     z-index: 1;
@@ -267,4 +260,6 @@ canvas {
   
 
 }
+
+
 

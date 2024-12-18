@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Product Page</title>
     <style>
         /* General Reset */
@@ -16,6 +17,16 @@
             font-family: Arial, Helvetica, sans-serif;
             background-color: black;
             color: black;
+        }
+
+        /* Parallax Section */
+        .parallax {
+            background-image: url('Parralax.jpg'); /* Add your background image */
+            min-height: 500px;
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         /* Navbar Styling */
@@ -69,20 +80,17 @@
             padding: 20px;
         }
 
-        button
-        {
+        button {
             width: 100%;
             height: 40px;
-            color: black ;
-            background-color:#c8b8ff;
+            color: black;
+            background-color: #c8b8ff;
             border-radius: 5px;
             font-size: 1.2rem;
             font-weight: bold;
-
         }
 
-        button:hover
-        {
+        button:hover {
             cursor: pointer;
             color: #4c78c8;
         }
@@ -109,8 +117,6 @@
             border-radius: 10px;
         }
 
-        
-
         .product-name {
             margin: 10px 0;
             font-size: 1.5rem;
@@ -124,18 +130,19 @@
             color: #4c78c8;
         }
 
+        /* Canvas Styling */
         #drawingCanvas {
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        display: block;
-        margin: 20px auto;
-        width: 100%;
-        max-width: 600px;
-            }
-            
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 600px;
+        }
 
-    
-        
+        .canvas-section {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -146,36 +153,35 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="Purchases.html">Products</a></li>
-                <li><a href="#">Cart</a></li>
+                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 <li><a href="AboutUs.html">About Us</a></li>
             </ul>
         </nav>
     </div>
 
+    <!-- Parallax Section -->
+    <div class="parallax"></div>
+
     <!-- Product Page -->
     <section class="product-container">
-        <!-- Product Box 1 -->
         <div class="product-box">
             <img src="Watch1.jpg" alt="Product 1" class="product-image">
             <h3 class="product-name">Casio InFecto</h3>
             <p class="product-price">25000Rs</p>
             <button type="submit">Buy</button>
         </div>
-        <!-- Product Box 2 -->
         <div class="product-box">
             <img src="Watch2.jpg" alt="Product 2" class="product-image">
             <h3 class="product-name">Fossil Eclipto</h3>
             <p class="product-price">30000Rs</p>
             <button type="submit">Buy</button>
         </div>
-        <!-- Product Box 3 -->
         <div class="product-box">
             <img src="Watch3.jpg" alt="Product 3" class="product-image">
             <h3 class="product-name">Titan Doomsday</h3>
             <p class="product-price">20000Rs</p>
             <button type="submit">Buy</button>
         </div>
-        <!-- Product Box 4 -->
         <div class="product-box">
             <img src="Watch4.jpg" alt="Product 4" class="product-image">
             <h3 class="product-name">Timex Victus</h3>
@@ -183,8 +189,10 @@
             <button type="submit">Buy</button>
         </div>
     </section>
+
+    <!-- Canvas Section -->
     <div class="canvas-section">
-        <h3 style="color: #4c78c8; display: flex; align-items: center; justify-content: center;">Design Your Own Watch</h3>
+        <h3 style="color: #4c78c8; text-align: center;">Design Your Own Watch</h3>
         <canvas id="drawingCanvas" width="600" height="400"></canvas>
         <div style="text-align: center; margin-top: 10px;">
             <button id="clearCanvas" style="padding: 10px 20px; background-color: #4c78c8; color: white; border: none; border-radius: 5px; cursor: pointer; width: 300px;">Clear Canvas</button>
@@ -226,6 +234,5 @@
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
     </script>
-    
 </body>
 </html>
