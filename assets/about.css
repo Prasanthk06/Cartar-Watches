@@ -45,13 +45,13 @@ body
 .Website-list ul
 {
     display: flex;
-    justify-content: space-between;
 }
 
 
 li
 {
     list-style: none;
+    justify-content: space-between;
 }
 
 hr

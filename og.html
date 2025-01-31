@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Cartar Watches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            background: linear-gradient(90deg, #4c78c8, #c8b8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cart-container {
+            max-width: 600px;
+            margin: auto;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #4c78c8;
+        }
+
+        .cart-item span {
+            font-size: 1.2rem;
+        }
+
+        .remove-btn {
+            background-color: #c8b8ff;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .remove-btn:hover {
+            background-color: #4c78c8;
+            color: white;
+        }
+
+        .total {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        .clear-cart {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .clear-cart:hover {
+            background-color: #ff1a1a;
+        }
+
+        .back-btn {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4c78c8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .back-btn:hover {
+            background-color: #c8b8ff;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Your Shopping Cart</h2>
+    <div class="cart-container" id="cart-items">
+    </div>
+    <div class="total">Total: ₹<span id="total-price">0</span></div>
+    <button class="clear-cart" onclick="clearCart()">Clear Cart</button>
+    <br>
+    <a href="index.html" class="back-btn">Continue Shopping</a>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function displayCart() {
+            const cartContainer = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+
+            cartContainer.innerHTML = "";
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price;
+
+                    const cartItem = document.createElement('div');
+                    cartItem.classList.add('cart-item');
+
+                    cartItem.innerHTML = `
+                        <span>${item.name} - ₹${item.price}</span>
+                        <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                    `;
+
+                    cartContainer.appendChild(cartItem);
+                });
+            }
+
+            totalPriceElement.textContent = total;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+            updateCartCount();
+        }
+
+        function clearCart() {
+            cart = [];
+            localStorage.setItem('cart', JSON.stringify(cart));
+            displayCart();
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+            }
+        }
+
+        // Load the cart on page load
+        document.addEventListener("DOMContentLoaded", displayCart);
+    </script>
+
+</body>
+</html>

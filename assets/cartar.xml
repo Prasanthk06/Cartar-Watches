@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cartar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="cartarSchema.xsd">
+    <brand>
+        <brandName>Omega</brandName>
+        <country>Switzerland</country>
+    </brand>
+    <brand>
+        <brandName>Casio</brandName>
+        <country>Japan</country>
+    </brand>
+    <product>
+        <productName>Speedmaster</productName>
+        <brandName>Omega</brandName>
+        <price>8000</price>
+        <availability>true</availability>
+    </product>
+    <product>
+        <productName>G-Shock</productName>
+        <brandName>Casio</brandName>
+        <price>120</price>
+        <availability>true</availability>
+    </product>
+    <product>
+        <productName>Edifice</productName>
+        <brandName>Casio</brandName>
+        <price>350</price>
+        <availability>false</availability>
+    </product>
+</cartar>

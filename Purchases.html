@@ -6,7 +6,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Product Page</title>
     <style>
-        /* General Reset */
         body, ul {
             margin: 0;
             padding: 0;
@@ -19,17 +18,7 @@
             color: black;
         }
 
-        /* Parallax Section */
-        .parallax {
-            background-image: url('Parralax.jpg'); /* Add your background image */
-            min-height: 500px;
-            background-attachment: fixed;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* Navbar Styling */
+       /* Navbar Styling */
         .Brand-name {
             display: flex;
             justify-content: space-between;
@@ -94,8 +83,6 @@
             cursor: pointer;
             color: #4c78c8;
         }
-
-        /* Product Box Styling */
         .product-box {
             background-color: #000;
             color: white;
@@ -151,42 +138,38 @@
         <a href="index.html"><h2>Cartar Watches</h2></a>
         <nav class="Website-list">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Purchases.html">Products</a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="LoginPage.html"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="Purchases.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="og.html">Cart(<span id="cart-count">0</span>)</a>
                 <li><a href="AboutUs.html">About Us</a></li>
             </ul>
         </nav>
     </div>
-
-    <!-- Parallax Section -->
-    <div class="parallax"></div>
-
     <!-- Product Page -->
     <section class="product-container">
         <div class="product-box">
-            <img src="Watch1.jpg" alt="Product 1" class="product-image">
+            <img src="./images/Watch1.jpg" alt="Product 1" class="product-image">
             <h3 class="product-name">Casio InFecto</h3>
-            <p class="product-price">25000Rs</p>
-            <button type="submit">Buy</button>
+            <p class="product-price">₹25000</p>
+            <button onclick="addtocart('Casio InFecto',25000)" class="add-to-cart">Add to Cart</button>
         </div>
         <div class="product-box">
-            <img src="Watch2.jpg" alt="Product 2" class="product-image">
+            <img src="./images/Watch2.jpg" alt="Product 2" class="product-image">
             <h3 class="product-name">Fossil Eclipto</h3>
-            <p class="product-price">30000Rs</p>
-            <button type="submit">Buy</button>
+            <p class="product-price">₹30000</p>
+            <button onclick="addtocart('Fossil Eclipto',30000)" class="add-to-cart">Add to Cart</button>
         </div>
         <div class="product-box">
-            <img src="Watch3.jpg" alt="Product 3" class="product-image">
+            <img src="./images/Watch3.jpg" alt="Product 3" class="product-image">
             <h3 class="product-name">Titan Doomsday</h3>
-            <p class="product-price">20000Rs</p>
-            <button type="submit">Buy</button>
+            <p class="product-price">₹20000</p>
+            <button onclick="addtocart('Titan Doomsaday',20000)" class="add-to-cart">Add to Cart</button>
         </div>
         <div class="product-box">
-            <img src="Watch4.jpg" alt="Product 4" class="product-image">
+            <img src="./images/Watch4.jpg" alt="Product 4" class="product-image">
             <h3 class="product-name">Timex Victus</h3>
-            <p class="product-price">35000Rs</p>
-            <button type="submit">Buy</button>
+            <p class="product-price">₹35000</p>
+            <button onclick="addtocart('Timex Victus',35000)" class="add-to-cart">Add to Cart</button>
         </div>
     </section>
 
@@ -233,6 +216,20 @@
         clearButton.addEventListener("click", () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         });
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function addtocart(Productname, price) {
+        cart.push({ name: Productname, price: price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updatecartcount();
+     }
+        function updatecartcount() {
+        const cartcount = document.getElementById('cart-count');
+        if (cartcount) {
+            cartcount.textContent = cart.length;
+        }
+    }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
