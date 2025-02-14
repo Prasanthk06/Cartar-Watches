@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="eCommerceApp">
+<head>
+    <meta charset="UTF-8">
+    <title>eCommerce AJAX Application (AngularJS)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+         body {
+            background: linear-gradient(90deg, #4c78c8, #c8b8ff);
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 22px;
+            padding-right: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            color: #4c78c8;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        input {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+        input:focus {
+            border-color: black;
+            outline: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+        }
+        th{
+            padding: 12px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        td
+        {
+            text-align: center;
+        }
+        td>p
+        {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        th {
+            background-color: #4c78c8;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        tr:hover {
+            background-color: #ADD8E6;
+            transition: background 0.3s ease-in-out;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            gap: 5px;
+            align-items: center;
+            background-color: #4c78c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background 0.3s ease-in-out;
+        }
+        button:hover {
+            background-color: #c8b8ff ;
+            scale: 1.10;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        select
+        {
+            display: inline-block;
+            padding: 12px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        select:hover
+        {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body ng-controller="ProductController">
+    <div class="container">
+        <h2>Cartar Watches DataBase</h2>
+        <input type="text" ng-model="searchText" placeholder="Search by name or brand...">
+        <select ng-model="sortOrder">
+            <option value="">Sort by</option>
+            <option value="+price">Price: Low to High</option>
+            <option value="-price">Price: High to Low</option>
+        </select>
+        
+        <table border="1" width="100%">
+            <tr>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Price</th>
+                <th>Release Date</th>
+            </tr>
+            <tr ng-repeat="product in products | filter:searchText | orderBy:sortOrder">
+                <td><p>{{ product.name| uppercase }}</p></td>
+                <td><p>{{ product.brand | lowercase }}</p></td>
+                <td><p>{{ product.price}}</p></td>
+                <td><p>{{ product.Date | date:'MMM dd,yyyy' }}</p></td>
+            </tr>
+        </table>
+        <div>
+            <button onclick="location.reload()">Bring Back Watches</button>
+            <button onclick="gopage()">Go To Home Page</button>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module("eCommerceApp", []);
+        app.controller("ProductController", function($scope, $http) {
+            $http.get("data.json")
+                .then(function(response) {
+                    $scope.products = response.data;
+                })
+                .catch(function(error) {
+                    console.error("Error loading JSON:", error);
+                });
+        });
+
+        function gopage()
+        {
+              window.location.href="index.html";
+        }
+    </script>
+</body>
+</html>

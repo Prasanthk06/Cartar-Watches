@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Casio InFecto",
+        "brand": "Casio",
+        "price": "₹25000",
+        "Date":"2005-10-10"
+    },
+    {
+        "name": "Fossil Eclipto",
+        "brand": "Fossil",
+        "price": "₹30000",
+        "Date":"2005-10-25"
+    },
+    {
+        "name": "Titan Doomsday",
+        "brand": "Titan",
+        "price": "₹54000",
+        "Date":"2005-10-01"
+    },
+    {
+        "name": "Timex Victus",
+        "brand": "Timex",
+        "price": "₹45000",
+        "Date":"2010-10-30"
+    },
+
+    {
+        "name": "Timex Zoro",
+        "brand": "Timex",
+        "price": "₹45000",
+        "Date":"2005-10-28"
+    },
+
+    {
+        "name": "Noise Yolo",
+        "brand": "Noise",
+        "price": "₹45000",
+        "Date":"2008-10-30"
+    }
+]

@@ -4,30 +4,31 @@
     <title>eCommerce AJAX Application</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        var XMLHttpRequestObj = false;
-        if (window.XMLHttpRequest) {
-            XMLHttpRequestObj = new XMLHttpRequest();
-        } else if (window.ActiveXObject) {
-            XMLHttpRequestObj = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-
         function loadXMLDoc(dataSource, contentID) {
+            var XMLHttpRequestObj = new XMLHttpRequest();
+
             if (XMLHttpRequestObj) {
                 var contentDiv = document.getElementById(contentID);
-                XMLHttpRequestObj.open("GET", dataSource);
-                XMLHttpRequestObj.onreadystatechange = function() {
-                    if (XMLHttpRequestObj.readyState == 4 && XMLHttpRequestObj.status == 200) {
-                        contentDiv.innerHTML = XMLHttpRequestObj.responseText + 
-                            '<br><button onclick="goBack()">Go Back</button>';
+                XMLHttpRequestObj.open("GET", dataSource, true);
+                
+                XMLHttpRequestObj.onreadystatechange = function () {
+                    if (XMLHttpRequestObj.readyState == 4) {
+                        if (XMLHttpRequestObj.status == 200) {
+                            contentDiv.innerHTML = XMLHttpRequestObj.responseText + 
+                                '<br><button onclick="goBack()">Go Back</button>';
+                        } else {
+                            contentDiv.innerHTML = "<p style='color:red;'>Failed to load content. Check console.</p>";
+                        }
                     }
                 };
+                
                 XMLHttpRequestObj.send(null);
                 document.getElementById("initialContent").style.display = "none";
             }
         }
 
         function goBack() {
-            window.location.href = "index.html";
+            location.reload();
         }
     </script>
     <style>
@@ -42,15 +43,14 @@
             justify-content: center;
             height: 100vh;
             text-align: center;
+            font-family: Arial, sans-serif;
         }
-
         .productDiv {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
-
         button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -60,27 +60,22 @@
             border: none;
             border-radius: 5px;
         }
-
         button:hover {
             background-color: #808080;
-            cursor: pointer;
         }
-
-        h2
-        {
+        h2 {
             color: red;
         }
     </style>
 </head>
 <body>
     <h2>eCommerce Website</h2>
-    
+
     <div id="productDiv" class="productDiv">
         <div id="initialContent">
             <h2>Click below to view the product details</h2>
             <button type="button" onclick="loadXMLDoc('cvv.xml', 'productContent')">View Product</button>
         </div>
-        
         <div id="productContent"></div>
     </div>
 </body>
