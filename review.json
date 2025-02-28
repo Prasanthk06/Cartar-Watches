@@ -28,5 +28,15 @@
     "name": "Prasanth",
     "email": "pk@gmail.com",
     "password": "$2b$10$EEj/Rh6NqYZUhM7zUTMgg.Axf38UCLnBEHMzIczwPy4svAgbv11ea"
+  },
+  {
+    "name": "Simon",
+    "email": "simon@gmail.com",
+    "password": "$2b$10$dL8Ws89tvmxSzNsVyuFDy.QDyExzkkDf6BL.PeI3oeqiXGxikqDc."
+  },
+  {
+    "name": "Ruchitha",
+    "email": "r@gmail.com",
+    "password": "$2b$10$YV86gQMweY7uFFyjIIiCsuivsOeaOmHciU8Yr6BGG29L74utZs2TC"
   }
 ]
