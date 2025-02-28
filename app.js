@@ -99,5 +99,5 @@ app.post('/login', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on https://cartar-watches.onrender.com}`);
 });
