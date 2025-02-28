@@ -182,6 +182,14 @@
         </div>
     </div>
 
+    
+    <h1>Submit Your Watch Review</h1>
+    <form id="reviewForm">
+        <label>Name: <input type="text" id="name" required></label><br>
+        <label>Rating (1-5): <input type="number" id="rating" min="1" max="5" required></label><br>
+        <label>Comment: <textarea id="comment" required></textarea></label><br>
+        <button type="submit">Submit Review</button>
+    </form>
     <script>
         const canvas = document.getElementById("drawingCanvas");
         const ctx = canvas.getContext("2d");

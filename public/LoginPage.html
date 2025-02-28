@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serenity Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="./assets/Loginstyle.css">
+    <link rel="stylesheet" href="../stylesheets/Loginstyle.css">
     
 </head>
 <body>
     <div class="container">
         <h1>Welcome Back</h1>
-        <form action="index.html">
+        <form action="/login" method="post">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" required>
@@ -35,7 +35,7 @@
             <button type="submit">Sign In</button>
 
             <div class="register-link">
-                <p>Don't have an account? <a href="Signup.html">Register</a></p>
+                <p>Don't have an account? <a href="./signup.html">Register</a></p>
             </div>
         </form>
     </div>

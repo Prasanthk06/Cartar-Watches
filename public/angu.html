@@ -2,7 +2,7 @@
 <html lang="en" ng-app="eCommerceApp">
 <head>
     <meta charset="UTF-8">
-    <title>eCommerce AJAX Application (AngularJS)</title>
+    <title>Database - Ecommerce Wacthes</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <style>
          body {
@@ -150,7 +150,7 @@
     <script>
         var app = angular.module("eCommerceApp", []);
         app.controller("ProductController", function($scope, $http) {
-            $http.get("data.json")
+            $http.get("/data.json")
                 .then(function(response) {
                     $scope.products = response.data;
                 })

@@ -228,6 +228,24 @@
             if (name && /\S+@\S+\.\S+/.test(email) && password.length >= 8 && password === confirmPassword && termsChecked) {
                 alert("Form submitted successfully!");
             }
+
+            if (name && /\S+@\S+\.\S+/.test(email) && password.length >= 8 && password === confirmPassword && termsChecked) {
+                fetch('/submit-signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email, password }),
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);
+                    window.location.href ="index.html";
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
         });
     </script>
 </body>
