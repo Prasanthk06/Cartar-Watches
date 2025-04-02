@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenity Hostels</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 { font-family: Georgia, 'Times New Roman', Times, serif; }
+        p { color: brown; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+        ol { font-family: Arial, Helvetica, sans-serif; }
+        ul { font-family: 'Times New Roman', Times, serif; }
+        table {
+            font-size: 22px;
+            border-color: #eb3434;
+            margin-left: 700px;
+            margin-top: -500px;
+        }
+        .A {
+            margin-top: 300px;
+            margin-bottom: 400px;
+        }
+        .aa {
+            animation: colorchange 3s infinite;
+            font-size: 50px;
+        }
+        @keyframes colorchange {
+            0% { color: #eb3434; }
+            10% { color: navy; }
+            25% { color: blue; }
+            50% { color: aqua; }
+            75% { color: brown; }
+            100% { color: darkmagenta; }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="aa"><marquee>Serenity Hostels</marquee></h1>
+        <hr>
+        <p id="address"> <i>This is</i> <br>Serenity hostel<br>29/2, 1st Main Rd, Bhavani Nagar, Suddagunte Palya, Bengaluru, Karnataka 560029, Bangalore, Karnataka</p>
+        <p>The Facilities are <br><b>1. Spacious fully furnished rooms</b><br>
+            <b>2. Security Cameras and Warden</b><br><b>3. North/South Indian foods</b><br>
+            <b>4. Washing machine and big space for hanging clothes</b></p>
+        <h2>Pg located in BANGLORE</h2>
+        
+        <ol>
+            <li>Christ back gate- Central campus</li>
+            <li>Christ Yeswanthpur campus</li>
+            <li>Near Jain University</li>
+            <li>Near St. Joseph University</li>
+        </ol>
+    </div>
+    
+    <h2>Student's Review</h2>
+    <ul>
+        <li>A very affordable PG for students with a great environment.</li>
+        <li>Good security with CCTV cameras and great food.</li>
+        <li>Well-maintained and clean rooms.</li>
+    </ul>
+    
+    <table border="2px">
+        <caption style="font-size: 25px; color: blue; margin-bottom: 10px;"><b><i><u>Types of Room</u></i></b></caption>
+        <tr>
+            <th>Room Type</th>
+            <th>Price</th>
+            <th>Availability</th>
+        </tr>
+        <tr>
+            <td>Normal Room</td>
+            <td>10000</td>
+            <td>25 rooms</td>
+        </tr>
+        <tr>
+            <td>Standard Room</td>
+            <td>15000</td>
+            <td>20 rooms</td>
+        </tr>
+        <tr>
+            <td>Premium Room</td>
+            <td>20000</td>
+            <td>15 rooms</td>
+        </tr>
+    </table>
+    
+    <form action="">
+        <select name="Rooms" id="Rooms">
+            <option value="Standard room">Standard room</option>
+            <option value="Normal room">Normal room</option>
+            <option value="Premium room">Premium room</option>
+        </select>
+    </form>
+    
+    <form action="">
+        Username: <input type="text" name="user" id="username"/><br>
+        Password: <input type="password" name="password" id="password"/>   
+    </form>
+    
+    <button id="submitBtn">Submit</button>
+    
+    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <center>Bhavani Nagar, Suddagunte Palya</center>
+    </h2>
+    <hr>
+    <h3 style="font-style: oblique;">
+        <center>BANGALORE</center>
+    </h3>
+    <hr>
+    <h3><u>The Logo of Serenity Hostels</u></h3>
+    <img src="https://tse1.mm.bing.net/th/id/OIP.5C41vbMsSMC2wstelvflnwHaHa?w=193&h=193&c=7&r=0&o=5&dpr=1.4&pid=1.7" width="300px" alt="Hostel Logo">
+    
+    <iframe src="iframe.html" frameborder="0"></iframe>
+
+    <script>
+        // Example of document.write
+        document.write("<h3>This is dynamically added using document.write</h3>");
+
+        // Example of getElementById to manipulate the content
+        document.getElementById("submitBtn").onclick = function() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            alert("Username: " + username + "\nPassword: " + password);
+        };
+    </script>
+</body>
+</html>
