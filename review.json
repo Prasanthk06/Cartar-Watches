@@ -43,5 +43,35 @@
     "name": "preetham",
     "email": "pk@gmail.com",
     "password": "$2b$10$VBkVCDbi0TDhDJ8L7/C2qOne2tIfwAgwQLvL7o0OHEHS9DKfqZABK"
+  },
+  {
+    "name": "Prasanth",
+    "email": "simonn@gmail.com",
+    "password": "$2b$10$.gBarFGDG4RANtI8RbbS1eAV.r9wywJRUly99Mnw6NRBcfxBaFrhO"
+  },
+  {
+    "name": "Simon",
+    "email": "si@gmail.com",
+    "password": "$2b$10$td544.vhNoF3yr6jL/llOe9Ah7jdoEhcJAw8bzkpV/027UCh4X35O"
+  },
+  {
+    "name": "Simon",
+    "email": "si@gmail.com",
+    "password": "$2b$10$s9gr5GIsfen.O0rxWVOQiuLWX5aJdViqH.1q2ctA/sVm97Oa9E2Zq"
+  },
+  {
+    "name": "Simon",
+    "email": "si@gmail.com",
+    "password": "$2b$10$o4Goa1nV7AHwVgTheXkNduTHfsljAdd9hOXuhfL9Mfrge.TuBQsoi"
+  },
+  {
+    "name": "Simon",
+    "email": "si@gmail.com",
+    "password": "$2b$10$isd4dmvuQgVNHybTWgtH6uomENCAIyNpq4CojdjJYdgX9XnfawfxO"
+  },
+  {
+    "name": "Prasanth",
+    "email": "pp@gmail.com",
+    "password": "$2b$10$5uiHuLOqZsM6fcLvneTB1OmpvlXsZwAnrRFOJSNgB2XYd6me1XQPu"
   }
 ]
